@@ -1,1 +1,8 @@
-<p>login works!</p>
+<h1>Login</h1>
+
+<input type="email" placeholder="Email" [(ngModel)]="email">
+<input type="password" placeholder="Senha" [(ngModel)]="senha">
+
+<button (click)="entrar()">Entrar</button>
+<button (click)="esqueciSenha()">Esqueci a Senha</button>
+<button (click)="cadastrar()">Cadastrar-me</button>
