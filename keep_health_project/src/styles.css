@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+.container {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  h2 {
+    color: #343a40;
+  }
