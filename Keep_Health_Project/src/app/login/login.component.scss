@@ -1,0 +1,26 @@
+:root {
+    --color-1: #0B04D9;
+    --color-2: #0433BF;
+    --color-3: #03258C;
+    --color-4: #022859;
+    --color-5: #0597F2;
+  }
+  
+  body {
+    background-color: var(--color-5);
+  }
+  
+  form {
+    background-color: var(--color-1);
+    color: var(--color-4);
+  }
+  
+  button {
+    background-color: var(--color-2);
+    color: var(--color-5);
+  }
+  
+  a {
+    color: var(--color-3);
+  }
+  
