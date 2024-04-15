@@ -1,1 +1,23 @@
-<p>profile works!</p>
+<!-- profile.component.html -->
+<div *ngIf="user">
+    <h2>Perfil do Usuário</h2>
+    export class ProfileComponent {
+        user: any; // Declare the 'user' property
+
+        // Rest of the component code
+    }
+    <p>Email: {{ user.email }}</p>
+    <!-- Adicione as informações de peso, altura, código do usuário, idade e localização -->
+    <!-- ... -->
+    <p>Altura: {{ user.altura | height }}</p>  <!-- Utilizando o HeightPipe -->
+    <p>Peso: {{ user.peso | weight }}</p>  <!-- Utilizando o WeightPipe -->
+    <p>Código do Usuário: {{ user.id }}</p>
+    <p>Idade: {{ user.idade }}</p>
+    <p>Localização: {{ user.localizacao }}</p>
+</div>
+    <div>
+        <label for="cep">CEP:</label>
+        <input type="text" id="cep" name="cep" [(ngModel)]="cep" /> 
+        <button (click)="pesquisarCEP()">Pesquisar</button>
+    </div>
+</div>
