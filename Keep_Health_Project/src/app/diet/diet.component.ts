@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 interface Food {
   id: number;
@@ -13,7 +14,7 @@ interface Food {
   templateUrl: './diet.component.html',
   styleUrls: ['./diet.component.scss'],
   standalone: true,
-  imports: [FormsModule]  // Adiciona o módulo FormsModule
+  imports: [FormsModule, RouterModule]  // Adiciona o módulo FormsModule
 })
 export class DietComponent implements OnInit {
   dietas: Food[] = [];

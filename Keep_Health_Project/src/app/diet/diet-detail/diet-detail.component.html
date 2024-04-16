@@ -1,0 +1,8 @@
+<h2>Detalhes da dieta</h2>
+<div *ngIf="dieta">
+    <img [src]="dieta?.imagem" alt="Imagem da dieta">
+    <h3>{{ dieta?.nome }}</h3>
+    <p>{{ dieta?.descricao }}</p>
+    <p>Calorias: {{ dieta?.calorias }}</p>
+    <p>Vezes que pode comer: {{ dieta?.vezes }}</p>
+</div>
