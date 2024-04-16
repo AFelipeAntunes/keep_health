@@ -1,1 +1,17 @@
-<p>diet works!</p>
+<h2>Dietas</h2>
+
+<div class="form-group">
+  <input type="text" class="form-control" [(ngModel)]="searchTerm" (input)="searchDiets()" placeholder="Pesquisar dietas...">
+</div>
+
+<div class="row">
+  <div class="col-md-4 mb-4" *ngFor="let dieta of dietas | filter:searchTerm">
+    <div class="card">
+      <img src="{{ dieta.imagem }}" class="card-img-top" alt="{{ dieta.nome }}">
+      <div class="card-body">
+        <h5 class="card-title">{{ dieta.nome }}</h5>
+        <p class="card-text">{{ dieta.descricao }}</p>
+      </div>
+    </div>
+  </div>
+</div>
