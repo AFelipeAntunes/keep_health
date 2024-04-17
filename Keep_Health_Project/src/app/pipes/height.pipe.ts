@@ -5,8 +5,11 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'height'
 })
 export class HeightPipe implements PipeTransform {
+
   transform(value: number): string {
-    const meters = value / 100;
-    return meters.toFixed(2) + 'm';
+    const metros = Math.floor(value / 100);
+    const centimetros = value % 100;
+    return `${metros}m ${centimetros}cm`;
   }
+
 }
