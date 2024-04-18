@@ -1,16 +1,20 @@
-<div *ngIf="user"> 
-    <h2>Perfil do Usuário</h2>
-    <p>Nome: {{ user.nome }}</p>
-    <p>Email: {{ user.email }}</p>
-    <p>Altura: {{ user.altura }}</p>
+<div *ngIf="user">
+  <h2>Perfil do Usuário</h2>
+  <p>Nome: {{ user.nome }}</p>
+  <p>Email: {{ user.email }}</p>
+  <p>Altura: {{ user.altura }}</p> 
+</div>
+
+<div>
+  <label for="cep">CEP:</label>
+  <input type="text" id="cep" name="cep" [(ngModel)]="cep" required #cepInput="ngModel" />
+  <button (click)="pesquisarCEP()" [disabled]="!cepInput.valid">Pesquisar</button>
+
+  <div *ngIf="cepInput.invalid && cepInput.touched" class="error-message">
+    O CEP é obrigatório.
   </div>
-  
-  <div>
-    <label for="cep">CEP:</label>
-    <input type="text" id="cep" name="cep" [(ngModel)]="cep" />
-    <button (click)="pesquisarCEP()">Pesquisar</button>
-  </div>
-  
-  <div *ngIf="endereco">
-    <p>Endereço: {{ endereco }}</p>
-  </div>
+</div>
+
+<div *ngIf="endereco">
+  <p>Endereço: {{ endereco }}</p>
+</div>
