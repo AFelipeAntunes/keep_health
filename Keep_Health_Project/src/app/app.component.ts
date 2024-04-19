@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
-import { HeaderComponent, SidebarComponent } from './shared/shared'; // Importe os componentes compartilhados
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [AppRoutingModule, HeaderComponent, SidebarComponent], // Adicione os componentes compartilhados
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'Keep_Health_Project';
+  title = 'keep_health_project';
 }
