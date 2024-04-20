@@ -1,1 +1,49 @@
-<p>home works!</p>
+
+<button pButton type="button" (click)="showDialog()">Adicionar atividade</button>
+<p-dialog [(visible)]="displayDialog" [modal]="true" [style]="{width: '450px'}">
+  <ng-template pTemplate="header">
+    Adicionar Atividade
+  </ng-template>
+
+  <ng-container *ngImport; let ng, FormsModule; let pDropdownModule, PrimeNG.DropdownModule>
+    <!-- Formulário para adicionar atividade -->
+    <div class="p-fluid">
+      <div class="p-field">
+        <label for="tipo">Tipo de Atividade</label>
+        <p-dropdown
+          id="tipo"
+          [options]="tiposAtividade"
+          [(ngModel)]="atividade.tipo"
+          placeholder="Selecione um tipo"
+        ></p-dropdown>
+      </div>
+      <div class="p-field">
+        <label for="data">Data</label>
+        <p-calendar id="data" [(ngModel)]="atividade.data"></p-calendar>
+      </div>
+      <div class="p-field">
+        <label for="distancia">Distância (opcional)</label>
+        <input type="number" id="distancia" pInputText [(ngModel)]="atividade.distancia">
+      </div>
+      <div class="p-field">
+        <label for="tempo">Tempo (opcional)</label>
+        <input type="text" id="tempo" pInputText [(ngModel)]="atividade.tempo">
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template pTemplate="footer">
+    <button pButton type="button" (click)="salvarAtividade()" label="Salvar"></button>
+  </ng-template>
+</p-dialog>
+
+
+<h2>Atividades</h2>
+<div *ngFor="let atividade of atividades" class="card"></div>
+
+<div class="card-body">
+  <p>{{ atividade.tipo | titlecase }}</p>
+  <p>{{ atividade.data | date }}</p>
+  <p>Distância: {{ atividade.distancia }} km</p>
+  <p>Tempo: {{ atividade.tempo }}</p>
+</div>

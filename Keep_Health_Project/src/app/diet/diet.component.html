@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h2>Dietas</h2>
+
+      <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="searchDiets()" placeholder="Pesquisar..." />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4" *ngFor="let dieta of dietasFiltradas">
+      <div class="card">
+        <img [src]="dieta.imagem" class="card-img-top" alt="Imagem da dieta">
+        <div class="card-body">
+          <h5 class="card-title">{{ dieta.nome }}</h5>
+          <p class="card-text">{{ dieta.descricao }}</p>
+          <a [routerLink]="['/diet', dieta.id]" class="btn btn-primary">Ver Detalhes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
