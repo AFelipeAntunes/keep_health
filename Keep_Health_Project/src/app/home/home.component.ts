@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit {
     tipo: '',
     data: new Date(),
   };
-  atividades: Atividade[] = []; // Lista de atividades
+  atividades: Atividade[] = [];
 
   ngOnInit() {
     // Carregar atividades da localStorage
