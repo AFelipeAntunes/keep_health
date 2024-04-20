@@ -8,7 +8,6 @@ import { CalendarModule } from 'primeng/calendar';
 import { InputTextModule } from 'primeng/inputtext';
 import { CommonModule } from '@angular/common';
 
-// Importe os componentes compartilhados (Opção 1)
 import { HeaderComponent } from '../shared/components/header/header.component';
 import { SidebarComponent } from '../shared/components/sidebar/sidebar.component';
 
