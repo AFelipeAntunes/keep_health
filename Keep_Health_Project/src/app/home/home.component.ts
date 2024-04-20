@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import { FormsModule } from '@angular/forms';
@@ -38,7 +38,7 @@ interface Atividade {
     SidebarComponent, // Importe os componentes compartilhados (Opção 1)
   ],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   displayDialog: boolean = false;
   tiposAtividade: any[] = [
     { label: 'Corrida', value: 'corrida' },
@@ -49,24 +49,14 @@ export class HomeComponent implements OnInit {
     tipo: '',
     data: new Date(),
   };
-  atividades: Atividade[] = []; // Lista de atividades
-
-  ngOnInit() {
-    // Carregar atividades da localStorage
-    this.atividades = JSON.parse(localStorage.getItem('atividades') || '[]');
-  }
 
   showDialog() {
     this.displayDialog = true;
   }
 
   salvarAtividade() {
-    let atividades: Atividade[] = JSON.parse(localStorage.getItem('atividades') || '[]');
-    atividades.push(this.atividade);
-    localStorage.setItem('atividades', JSON.stringify(atividades));
-    this.atividade = { tipo: '', data: new Date() }; 
-    this.displayDialog = false;
-    // Atualizar a lista de atividades após salvar
-    this.atividades = atividades; 
+    // Implementar a lógica para salvar a atividade na localStorage
+    // ...
+    this.displayDialog = false; // Fechar o diálogo
   }
 }
